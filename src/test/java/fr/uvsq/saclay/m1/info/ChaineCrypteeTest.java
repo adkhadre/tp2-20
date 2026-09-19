@@ -18,4 +18,16 @@ class ChaineCrypteeTest {
 
         assertEquals("C", chaine.crypte());
     }
+    @Test
+    void crypteDAvecUneCleNegativeDeTrois() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("D", -3);
+
+        assertEquals("A", chaine.crypte());
+    }
+    @Test
+    void crypteCAvecUneCleNegativeDeTrois() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("C", -3);
+
+        assertEquals("Z", chaine.crypte());
+    }
 }
