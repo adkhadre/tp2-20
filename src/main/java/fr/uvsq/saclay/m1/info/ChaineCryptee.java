@@ -21,7 +21,7 @@ public class ChaineCryptee {
             char caractere = chaine.charAt(i);
 
             if (caractere >= 'A' && caractere <= 'Z') {
-                caractere = (char) ((caractere - 'A' + decalage) % 26 + 'A');
+                caractere = (char) ((caractere - 'A' + decalage+26) % 26 + 'A');
             }
 
             resultat += caractere;
