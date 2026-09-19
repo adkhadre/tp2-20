@@ -23,8 +23,7 @@ public class ChaineCryptee {
         }
         return (char) (Math.floorMod(c - 'A' + decalage, 26) + 'A');
     }
-
-    public String crypte() {
+    private String transforme(int decalage) {
         StringBuilder resultat = new StringBuilder();
 
         for (int i = 0; i < chaine.length(); i++) {
@@ -34,18 +33,15 @@ public class ChaineCryptee {
 
         return resultat.toString();
     }
+    public String crypte() {
+        return transforme(decalage);
+    }
+
     public static ChaineCryptee deCryptee(String chaine, int decalage) {
         return new ChaineCryptee(chaine, decalage);
     }
     public String decrypte() {
-        StringBuilder resultat = new StringBuilder();
-
-        for (int i = 0; i < chaine.length(); i++) {
-            char caractere = chaine.charAt(i);
-            resultat.append(decaleCaractere(caractere, -decalage));
-        }
-
-        return resultat.toString();
+        return transforme(-decalage);
     }
 
 
