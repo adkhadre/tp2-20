@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ChaineCrypteeTest {
 
@@ -57,6 +58,13 @@ class ChaineCrypteeTest {
     void crypteAvecUneCleInferieureAmoins26() {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("C", -29);
         assertEquals("Z", chaine.crypte());
+    }
+    @Test
+    void crypteUneChaineNullDoitLeverUneException() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> ChaineCryptee.deEnClair(null, 1)
+        );
     }
 
 }
