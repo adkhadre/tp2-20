@@ -6,6 +6,10 @@ public class ChaineCryptee {
     private int decalage;
 
     private ChaineCryptee(String chaine, int decalage) {
+        if (chaine == null) {
+            throw new IllegalArgumentException("La chaîne ne peut pas être null");
+        }
+
         this.chaine = chaine;
         this.decalage = decalage;
     }
