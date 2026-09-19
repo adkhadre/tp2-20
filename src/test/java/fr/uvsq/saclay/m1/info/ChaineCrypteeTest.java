@@ -150,5 +150,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deCryptee("A", -52);
         assertEquals("A", chaine.decrypte());
     }
+    @Test
+    void deEnClairDoitPermettreDecrypterLaChaineOriginale() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("ABC", 1);
+        assertEquals("ABC", chaine.decrypte());
+    }
 
 }

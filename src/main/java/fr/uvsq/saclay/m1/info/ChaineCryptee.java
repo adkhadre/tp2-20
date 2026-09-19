@@ -2,7 +2,7 @@ package fr.uvsq.saclay.m1.info;
 
 public class ChaineCryptee {
 
-    private String chaine;
+    private String chaineCryptee;
     private int decalage;
 
     private ChaineCryptee(String chaine, int decalage) {
@@ -10,38 +10,42 @@ public class ChaineCryptee {
             throw new IllegalArgumentException("La chaîne ne peut pas être null");
         }
 
-        this.chaine = chaine;
+        this.chaineCryptee = chaine;
         this.decalage = decalage;
     }
 
     public static ChaineCryptee deEnClair(String chaine, int decalage) {
-        return new ChaineCryptee(chaine, decalage);
+        if (chaine == null) {
+            throw new IllegalArgumentException("La chaîne ne peut pas être null");
+        }
+
+        return new ChaineCryptee(
+                transforme(chaine, decalage),
+                decalage);
     }
-    private char decaleCaractere(char c, int decalage) {
+    private static char decaleCaractere(char c, int decalage) {
         if (c < 'A' || c > 'Z') {
             return c;
         }
         return (char) (Math.floorMod(c - 'A' + decalage, 26) + 'A');
     }
-    private String transforme(int decalage) {
+    private static String transforme(String chaine, int decalage){
         StringBuilder resultat = new StringBuilder();
-
         for (int i = 0; i < chaine.length(); i++) {
             char caractere = chaine.charAt(i);
             resultat.append(decaleCaractere(caractere, decalage));
         }
-
         return resultat.toString();
     }
     public String crypte() {
-        return transforme(decalage);
+        return chaineCryptee;
     }
 
     public static ChaineCryptee deCryptee(String chaine, int decalage) {
         return new ChaineCryptee(chaine, decalage);
     }
     public String decrypte() {
-        return transforme(-decalage);
+        return transforme(chaineCryptee, -decalage);
     }
 
 
