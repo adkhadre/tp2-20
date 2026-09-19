@@ -12,4 +12,10 @@ class ChaineCrypteeTest {
 
         assertEquals("BCD", chaine.crypte());
     }
+    @Test
+    void crypteZAvecUneCleDeTrois() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("Z", 3);
+
+        assertEquals("C", chaine.crypte());
+    }
 }
