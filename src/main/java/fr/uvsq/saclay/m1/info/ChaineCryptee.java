@@ -47,6 +47,12 @@ public class ChaineCryptee {
     public String decrypte() {
         return transforme(chaineCryptee, -decalage);
     }
+    public static void main(String[] args) {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("BONJOUR", 3);
+
+        System.out.println("Chaîne cryptée : " + chaine.crypte());
+        System.out.println("Chaîne décryptée : " + chaine.decrypte());
+    }
 
 
 
