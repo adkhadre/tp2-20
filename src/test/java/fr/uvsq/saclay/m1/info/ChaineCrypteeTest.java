@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+
 class ChaineCrypteeTest {
 
     @Test
@@ -52,4 +53,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("A", 27);
         assertEquals("B", chaine.crypte());
     }
+    @Test
+    void crypteAvecUneCleInferieureAmoins26() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("C", -29);
+        assertEquals("Z", chaine.crypte());
+    }
+
 }
