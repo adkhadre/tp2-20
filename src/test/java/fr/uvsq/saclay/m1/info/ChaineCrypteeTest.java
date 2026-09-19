@@ -91,5 +91,22 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deCryptee("B1aC", 1);
         assertEquals("A1aB", chaine.decrypte());
     }
+    @Test
+    void crypterPuisDecrypterRedonneLaChaineOriginale() {
+        String original = "HELLO WORLD";
+
+        ChaineCryptee chaine = ChaineCryptee.deEnClair(original, 3);
+        String chiffre = chaine.crypte();
+
+        ChaineCryptee chaineCryptee = ChaineCryptee.deCryptee(chiffre, 3);
+        String resultat = chaineCryptee.decrypte();
+
+        assertEquals(original, resultat);
+    }
+    @Test
+    void crypteUneChaineVide() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("", 3);
+        assertEquals("", chaine.crypte());
+    }
 
 }

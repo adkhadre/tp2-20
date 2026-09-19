@@ -27,20 +27,20 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 À chaque étape, validez vos modifications avec `git` et si nécessaire, exécutez le cycle maven adapté pour vérifier vos manipulations.
 
 1.  Quelles conventions utilise Maven pour l’arborescence des répertoires ?
-    > RÉPONDRE ICI
+    > Arborescence : Maven utilise une arborescence standard avec src/main/java pour les sources, src/main/resources pour les ressources, src/test/java pour les tests et src/test/resources pour les ressources de test.
 1.  Examinez le projet Maven ainsi que le fichier de description et répondez aux questions suivantes :
     1.  Dans quel répertoire se trouvent les fichiers sources du projet ? Les sources des tests ?
-        > RÉPONDRE ICI
+        > Les fichiers source se trouve dans: src/main/java et les sources de test dans: src/test/java
     1. Quelles sont les coordonnées du projet ?
-        > RÉPONDRE ICI
+        > Coordonnées : groupId = fr.uvsq.saclay.m1.info, artifactId = tp2, version = 1.0-SNAPSHOT.
     1. À quoi sert la propriété `project.build.sourceEncoding` ?
-        > RÉPONDRE ICI
+        > project.build.sourceEncoding : cette propriété indique l'encodage utilisé pour les fichiers sources. Ici, il s'agit de UTF-8.
     1. Quelles versions des sources et de la JVM sont utilisés ?
-        > RÉPONDRE ICI
+        > Versions : Java 17 est utilisé pour les sources et la JVM cible.
     1. Quelle version de JUnit est configurée ? À quoi sert la balise `scope` ?
-        > RÉPONDRE ICI
+        >JUnit : JUnit 5.14.4 est configuré. La balise scope indique dans quel contexte la dépendance est nécessaire. Avec scope=test, JUnit est uniquement utilisé pour compiler et exécuter les tests.
     1. À quoi sert la section `pluginManagement` ?
-        > RÉPONDRE ICI
+        > pluginManagement : cette section permet de définir et centraliser la configuration des plugins Maven, notamment leurs versions et leurs paramètres. Elle ne les active pas automatiquement.
 1.  Modifiez la configuration du projet de la façon suivante :
     1.  fixez la version des sources et des .class pour utiliser la version 17 de Java
     1.  utilisez la dernière version stable de JUnit 5 (cf. [MVNRepository](https://mvnrepository.com/))
