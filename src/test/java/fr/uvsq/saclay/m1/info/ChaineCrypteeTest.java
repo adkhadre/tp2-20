@@ -30,4 +30,10 @@ class ChaineCrypteeTest {
 
         assertEquals("Z", chaine.crypte());
     }
+    @Test
+    void crypteEspaceNeDoitPasEtreModifie() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("A B", 1);
+
+        assertEquals("B C", chaine.crypte());
+    }
 }
