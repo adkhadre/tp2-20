@@ -42,4 +42,9 @@ class ChaineCrypteeTest {
 
         assertEquals("a", chaine.crypte());
     }
+    @Test
+    void crypteUnChiffreNeDoitPasEtreModifie() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("A1B", 1);
+        assertEquals("B1C", chaine.crypte());
+    }
 }
