@@ -81,5 +81,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deCryptee("Z", -3);
         assertEquals("C", chaine.decrypte());
     }
+    @Test
+    void decrypteUneChaineAvecUnEspace() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("B C", 1);
+        assertEquals("A B", chaine.decrypte());
+    }
 
 }
