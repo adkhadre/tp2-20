@@ -17,18 +17,19 @@ public class ChaineCryptee {
     public static ChaineCryptee deEnClair(String chaine, int decalage) {
         return new ChaineCryptee(chaine, decalage);
     }
+    private char decaleCaractere(char c, int decalage) {
+        if (c < 'A' || c > 'Z') {
+            return c;
+        }
+        return (char) (Math.floorMod(c - 'A' + decalage, 26) + 'A');
+    }
 
     public String crypte() {
         String resultat = "";
 
         for (int i = 0; i < chaine.length(); i++) {
             char caractere = chaine.charAt(i);
-
-            if (caractere >= 'A' && caractere <= 'Z') {
-                caractere = (char) ((Math.floorMod(
-                        caractere - 'A' + decalage, 26)) + 'A');            }
-
-            resultat += caractere;
+            resultat += decaleCaractere(caractere, decalage);
         }
 
         return resultat;
