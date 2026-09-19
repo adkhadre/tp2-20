@@ -25,27 +25,27 @@ public class ChaineCryptee {
     }
 
     public String crypte() {
-        String resultat = "";
+        StringBuilder resultat = new StringBuilder();
 
         for (int i = 0; i < chaine.length(); i++) {
             char caractere = chaine.charAt(i);
-            resultat += decaleCaractere(caractere, decalage);
+            resultat.append(decaleCaractere(caractere, decalage));
         }
 
-        return resultat;
+        return resultat.toString();
     }
     public static ChaineCryptee deCryptee(String chaine, int decalage) {
         return new ChaineCryptee(chaine, decalage);
     }
     public String decrypte() {
-        String resultat = "";
+        StringBuilder resultat = new StringBuilder();
 
         for (int i = 0; i < chaine.length(); i++) {
             char caractere = chaine.charAt(i);
-            resultat += decaleCaractere(caractere, -decalage);
+            resultat.append(decaleCaractere(caractere, -decalage));
         }
 
-        return resultat;
+        return resultat.toString();
     }
 
 
