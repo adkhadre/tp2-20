@@ -108,5 +108,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("", 3);
         assertEquals("", chaine.crypte());
     }
+    @Test
+    void decrypteUneChaineVide() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("", 3);
+        assertEquals("", chaine.decrypte());
+    }
 
 }
