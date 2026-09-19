@@ -1,6 +1,8 @@
 package fr.uvsq.saclay.m1.info;
 
 public class ChaineCryptee {
+    private static final org.slf4j.Logger LOGGER =
+            org.slf4j.LoggerFactory.getLogger(ChaineCryptee.class);
 
     private String chaineCryptee;
     private int decalage;
@@ -50,8 +52,8 @@ public class ChaineCryptee {
     public static void main(String[] args) {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("BONJOUR", 3);
 
-        System.out.println("Chaîne cryptée : " + chaine.crypte());
-        System.out.println("Chaîne décryptée : " + chaine.decrypte());
+        LOGGER.info("Chaîne cryptée : {}", chaine.crypte());
+        LOGGER.info("Chaîne décryptée : {}", chaine.decrypte());
     }
 
 
