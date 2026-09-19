@@ -140,5 +140,15 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("A", -52);
         assertEquals("A", chaine.crypte());
     }
+    @Test
+    void decrypteAvecUneCleTresGrande() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("A", 52);
+        assertEquals("A", chaine.decrypte());
+    }
+    @Test
+    void decrypteAvecUneCleNegativeTresGrande() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("A", -52);
+        assertEquals("A", chaine.decrypte());
+    }
 
 }
