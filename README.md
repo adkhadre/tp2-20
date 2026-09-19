@@ -47,15 +47,32 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
 1.  Ajoutez un fichier `.gitignore` adapté aux projets Maven (cf. [A collection of .gitignore templates](https://github.com/github/gitignore)) et ajoutez-y les fichiers et répertoires de votre IDE.
 1.  Quelle commande Maven permet de :
     1.  créer un `jar` du projet ?
-        > RÉPONDRE ICI
+        > mvn package
     1. lancer les tests ?
-        > RÉPONDRE ICI
+        > mvn test
     1. supprimer tous les fichiers issus de la compilation ?
-        > RÉPONDRE ICI
+        > mvn clean
 1.  Ajoutez une classe `ChaineCryptee` et une classe `ChaineCrypteeTest` dans les répertoires et packages appropriés.
     Supprimez les classes d'exemple `App` et `AppTest`.
 1.  Énumérez une liste de cas de tests à réaliser en n'oubliant pas les cas d'erreur.
-    > RÉPONDRE ICI
+    ```text
+    Les cas de tests suivants ont été envisagés :
+
+    chiffrement d'une chaîne simple ;
+    décalage circulaire, par exemple Z avec une clé de 3 donne C ;
+    décalage négatif, par exemple D avec une clé de -3 donne A ;
+    conservation des espaces ;
+    conservation des caractères qui ne sont pas des majuscules ;
+    comportement avec des minuscules ;
+    clés supérieures à 26 ;
+    clés inférieures à -26 ;
+    clé égale à 0 ;
+    chaîne vide ;
+    chaîne null ;
+    déchiffrement d'une chaîne ;
+    déchiffrement avec un décalage négatif ;
+    vérification que le déchiffrement du résultat d'un chiffrement redonne la chaîne initiale.
+    ```
 1.  Pour chaque cas de test,
     1. écrivez le test JUnit correspondant dans la classe de test,
     1. vérifiez qu’il échoue,
@@ -64,7 +81,7 @@ Il pourra éventuellement être nécessaire de [configurer le proxy](http://mave
     1. appliquez un étape de refactoring sur les tests et la classe si nécessaire.
 1.  Comment se comporte votre classe si la chaîne passée au constructeur est `null` ?
 Vous pouvez utiliser le débogueur pour identifier le problème (s'il y a un problème) au niveau de `crypte`.
-    > RÉPONDRE ICI
+    > Si la chaîne passée au constructeur est null, la classe lève une IllegalArgumentException avec le message « La chaîne ne peut pas être null ». Cette vérification permet d'éviter une erreur lors du traitement de la chaîne, notamment lors de l'appel à length() ou charAt().
     1. ajoutez un test pour prendre en compte la chaîne `null`,
     1. si nécessaire, modifiez la classe pour faire passer le test
 1. Changez la représentation interne de la classe : seule la chaîne cryptée est stockée (plus la chaîne en clair).
