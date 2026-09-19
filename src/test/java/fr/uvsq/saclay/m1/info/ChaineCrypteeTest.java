@@ -118,5 +118,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("ABC XYZ", 0);
         assertEquals("ABC XYZ", chaine.crypte());
     }
+    @Test
+    void decrypteAvecUneCleDeZero() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("ABC XYZ", 0);
+        assertEquals("ABC XYZ", chaine.decrypte());
+    }
 
 }
