@@ -86,5 +86,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deCryptee("B C", 1);
         assertEquals("A B", chaine.decrypte());
     }
+    @Test
+    void decrypteLesCaracteresNonMajusculesNeSontPasModifies() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("B1aC", 1);
+        assertEquals("A1aB", chaine.decrypte());
+    }
 
 }
