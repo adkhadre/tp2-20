@@ -47,4 +47,9 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("A1B", 1);
         assertEquals("B1C", chaine.crypte());
     }
+    @Test
+    void crypteAvecUneCleSuperieureA26() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("A", 27);
+        assertEquals("B", chaine.crypte());
+    }
 }
