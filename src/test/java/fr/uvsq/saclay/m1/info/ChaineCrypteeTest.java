@@ -71,5 +71,10 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deCryptee("BCD", 1);
         assertEquals("ABC", chaine.decrypte());
     }
+    @Test
+    void decrypteCAvecUneCleDeTrois() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("C", 3);
+        assertEquals("Z", chaine.decrypte());
+    }
 
 }
