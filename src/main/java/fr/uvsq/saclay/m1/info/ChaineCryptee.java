@@ -34,4 +34,17 @@ public class ChaineCryptee {
 
         return resultat;
     }
+    public static ChaineCryptee deCryptee(String chaine, int decalage) {
+        return new ChaineCryptee(chaine, decalage);
+    }
+    public String decrypte() {
+        String resultat = "";
+
+        for (int i = 0; i < chaine.length(); i++) {
+            char caractere = chaine.charAt(i);
+            resultat += decaleCaractere(caractere, -decalage);
+        }
+
+        return resultat;
+    }
 }

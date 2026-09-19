@@ -66,5 +66,10 @@ class ChaineCrypteeTest {
                 () -> ChaineCryptee.deEnClair(null, 1)
         );
     }
+    @Test
+    void decrypteUneChaineAvecUneCleDeUn() {
+        ChaineCryptee chaine = ChaineCryptee.deCryptee("BCD", 1);
+        assertEquals("ABC", chaine.decrypte());
+    }
 
 }
