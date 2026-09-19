@@ -36,4 +36,10 @@ class ChaineCrypteeTest {
 
         assertEquals("B C", chaine.crypte());
     }
+    @Test
+    void crypteUneMinusculeNeDoitPasEtreModifiee() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("a", -3);
+
+        assertEquals("a", chaine.crypte());
+    }
 }
