@@ -130,5 +130,15 @@ class ChaineCrypteeTest {
                 () -> ChaineCryptee.deCryptee(null, 1)
         );
     }
+    @Test
+    void crypteAvecUneCleTresGrande() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("A", 52);
+        assertEquals("A", chaine.crypte());
+    }
+    @Test
+    void crypteAvecUneCleNegativeTresGrande() {
+        ChaineCryptee chaine = ChaineCryptee.deEnClair("A", -52);
+        assertEquals("A", chaine.crypte());
+    }
 
 }
