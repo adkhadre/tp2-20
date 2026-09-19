@@ -123,5 +123,12 @@ class ChaineCrypteeTest {
         ChaineCryptee chaine = ChaineCryptee.deCryptee("ABC XYZ", 0);
         assertEquals("ABC XYZ", chaine.decrypte());
     }
+    @Test
+    void decrypteUneChaineNullDoitLeverUneException() {
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> ChaineCryptee.deCryptee(null, 1)
+        );
+    }
 
 }
