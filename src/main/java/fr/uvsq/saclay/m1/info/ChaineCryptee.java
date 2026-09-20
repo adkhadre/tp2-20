@@ -51,9 +51,13 @@ public class ChaineCryptee {
     }
     public static void main(String[] args) {
         ChaineCryptee chaine = ChaineCryptee.deEnClair("BONJOUR", 3);
+        ChaineCryptee message = ChaineCryptee.deEnClair("CE PROJET EST VRAIMENT TRES INTERESSANT", -9);
 
         LOGGER.info("Chaîne cryptée : {}", chaine.crypte());
         LOGGER.info("Chaîne décryptée : {}", chaine.decrypte());
+
+        LOGGER.info("Chaîne cryptée : {}", message.crypte());
+        LOGGER.info("Chaîne décryptée : {}", message.decrypte());
     }
 
 
